@@ -24,8 +24,6 @@ type mon struct {
 	MLR  string `xml:"sum_mlr_1m,attr"`
 }
 
-var objmap map[string]*json.RawMessage
-
 func (m *monData) xmlGetDecode(r []byte) int {
 	if err := xml.Unmarshal(r, &m); err != nil {
 		fmt.Println(err)
