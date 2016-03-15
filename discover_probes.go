@@ -39,7 +39,8 @@ func request(r string) []byte {
 	}
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("{\"data\":[]}")
+		os.Exit(0)
 	}
 	defer resp.Body.Close()
 	bodyByte, err := ioutil.ReadAll(resp.Body)
