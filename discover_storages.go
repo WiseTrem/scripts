@@ -118,7 +118,30 @@ func GetAndParse(ip string, key string) error {
 	newstr := re.ReplaceAllLiteralString(str, "}")
 	//fmt.Println(newstr)
 
-	r := strings.NewReplacer("OBJECT", "data", "},{\"NAME\":", ",", ",\"VALUE\"", "", "}],\"TYPE\":\"volumes\"", "", "storage-pool-name", "{#POOLNAME}", "reserved-size-in-pages", "{#RESSIZEPAGES}", "volume-name", "{#VOLNAME}", "total-size-numeric", "{#TOTALSIZENUM}", "total-size", "{#TOTALSIZE}", "allocated-size-numeric", "{#ALOCSIZENUM}", "allocated-size", "{#ALLOCSIZE}", "read-ahead-size-numeric", "{#READAHEADSIZENUM}", "read-ahead-size", "{#READAHEADRSIZE}", "size-numeric", "{#SIZENUM}", "size", "{#SIZE}", "preferred-owner-numeric", "{#PREFOWNERNUM}", "preferred-owner", "{#PREFOWNER}", "owner-numeric", "{#OWNERNUM}", "owner", "{#OWNER}", "serial-number", "{#SERIAL}", "write-policy-numeric", "{#WPOLICYNUM}", "write-policy", "{#WPOLICY}", "cache-optimization-muneric", "{#CACHEOPTNUM}", "cache-optimization", "{#CACHEOPT}", "volume-type-numeric", "{#VOLUMETYPENUM}", "volume-type", "{#VOLUMETYPE}", "volume-class-numeric", "{VOLCLASSNUM}", "volume-class", "{#VOLCLASS}", "profile-preference-numeric", "{#PROFILEPREFNUM}", "profile-preference", "{#PROFILEPREF}", "snapshot", "{#SNAPSHOT}", "volume-qualifier-numeric", "{#VOLUMEQNUM}", "volume-qualifier", "{#VOLUMEQ}", "blocks", "{#BLOCKS}", "capabilities", "{#CAPAB}", "volume-parent", "{#VOLPARENT}", "snap-pool", "{#SPOOL}", "replication-set", "{#RSET}", "attributes", "{#ATTR}", "virtual-disk-serial", "{#VDSERIAL}", "volume-description", "{#DESC}", "wwn", "{#WWN}", "progress-numeric", "{#PROGRESSRNUM}", "progress", "{#PROGRESS}", "container-name", "{#CNAME}", "container-serial", "{#CSERIAL}", "allowed-storage-tiers-numeric", "{#ASTN}", "allowed-storage-tiers", "{#AST}", "threshold-percent-of-pool", "{#TRESHP}", "allocate-reserved-pages-first-numeric", "{#ARPFNUM}", "allocate-reserved-pages-first", "{#ARPF}", "zero-init-page-on-allocation-numeric", "{#ZIPOANUM}", "zero-init-page-on-allocation", "{#ZIPOA}", "raidtype-numeric", "{#RAIDTYPENUM}", "raidtype", "{#RAIDTYPE}", "pi-format-numeric", "{#PIFORMATNUM}", "pi-format", "{#PIFORMAT}", "health-reason", "{#HEALTHREASON}", "health-recommendation", "{#HEALTHRECOM}", "health-numeric", "{#HEALTHNUM}", "health", "{#HEALTH}", "volume-group", "{#VOLGROUP}", "group-key", "{#GROUPKEY}")
+	r := strings.NewReplacer("OBJECT", "data", "},{\"NAME\":", ",", ",\"VALUE\"", "", "}],\"TYPE\":\"volumes\"", "",
+		"storage-pool-name", "{#POOLNAME}", "reserved-size-in-pages", "{#RESSIZEPAGES}", "volume-name",
+		"{#VOLNAME}", "total-size-numeric", "{#TOTALSIZENUM}", "total-size", "{#TOTALSIZE}",
+		"allocated-size-numeric", "{#ALOCSIZENUM}", "allocated-size", "{#ALLOCSIZE}",
+		"read-ahead-size-numeric", "{#READAHEADSIZENUM}", "read-ahead-size", "{#READAHEADRSIZE}",
+		"size-numeric", "{#SIZENUM}", "size", "{#SIZE}", "preferred-owner-numeric", "{#PREFOWNERNUM}",
+		"preferred-owner", "{#PREFOWNER}", "owner-numeric", "{#OWNERNUM}", "owner", "{#OWNER}",
+		"serial-number", "{#SERIAL}", "write-policy-numeric", "{#WPOLICYNUM}", "write-policy", "{#WPOLICY}",
+		"cache-optimization-numeric", "{#CACHEOPTNUM}", "cache-optimization", "{#CACHEOPT}",
+		"volume-type-numeric", "{#VOLUMETYPENUM}", "volume-type", "{#VOLUMETYPE}",
+		"volume-class-numeric", "{VOLCLASSNUM}", "volume-class", "{#VOLCLASS}",
+		"profile-preference-numeric", "{#PROFILEPREFNUM}", "profile-preference", "{#PROFILEPREF}",
+		"snapshot", "{#SNAPSHOT}", "volume-qualifier-numeric", "{#VOLUMEQNUM}", "volume-qualifier", "{#VOLUMEQ}",
+		"blocks", "{#BLOCKS}", "capabilities", "{#CAPAB}", "volume-parent", "{#VOLPARENT}", "snap-pool", "{#SPOOL}",
+		"replication-set", "{#RSET}", "attributes", "{#ATTR}", "virtual-disk-serial", "{#VDSERIAL}",
+		"volume-description", "{#DESC}", "wwn", "{#WWN}", "progress-numeric", "{#PROGRESSRNUM}",
+		"progress", "{#PROGRESS}", "container-name", "{#CNAME}", "container-serial", "{#CSERIAL}",
+		"allowed-storage-tiers-numeric", "{#ASTN}", "allowed-storage-tiers", "{#AST}",
+		"threshold-percent-of-pool", "{#TRESHP}", "allocate-reserved-pages-first-numeric", "{#ARPFNUM}",
+		"allocate-reserved-pages-first", "{#ARPF}", "zero-init-page-on-allocation-numeric", "{#ZIPOANUM}",
+		"zero-init-page-on-allocation", "{#ZIPOA}", "raidtype-numeric", "{#RAIDTYPENUM}", "raidtype", "{#RAIDTYPE}",
+		"pi-format-numeric", "{#PIFORMATNUM}", "pi-format", "{#PIFORMAT}", "health-reason", "{#HEALTHREASON}",
+		"health-recommendation", "{#HEALTHRECOM}", "health-numeric", "{#HEALTHNUM}", "health", "{#HEALTH}",
+		"volume-group", "{#VOLGROUP}", "group-key", "{#GROUPKEY}")
 	json := r.Replace(newstr)
 
 	fmt.Println(json)
